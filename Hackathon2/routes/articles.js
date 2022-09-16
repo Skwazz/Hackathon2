@@ -9,8 +9,10 @@ const {
   _deleteArticle,
   renderHome,
   renderArticlesPage,
+  renderAdminUI,
 } = require("../controllers/articles.js");
 
+router.get("/adminUI", renderAdminUI);
 router.get("/home", renderHome);
 router.get("/articles", renderArticlesPage);
 router.get("/articles/search", _searchArticles);

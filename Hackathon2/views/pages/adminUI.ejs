@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Editor</title>
+    <%- include('../partials/head') %>
+  </head>
+  <body>
+    <%- include('../partials/header') %>
+    <div id="container">
+      <form id="form" onsubmit="submitPost(event)">
+        <input type="text" name="title" id="title" placeholder="title" />
+        <label for="postBody">post body</label>
+        <textarea name="postBody" id="postBody" rows="15" cols="60"></textarea>
+        <button id="button">CLICK ME PLEASE</button>
+      </form>
+    </div>
+    <%- include('../partials/footer') %>
+    <script src="/script.js"></script>
+  </body>
+</html>
