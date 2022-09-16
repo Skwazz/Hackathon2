@@ -1,0 +1,1 @@
+const article = 1;
