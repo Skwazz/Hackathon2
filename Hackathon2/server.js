@@ -10,8 +10,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(article_router);
 app.set("view engine", "ejs");
-app.listen(process.env.PORT || 8080, () => {
-  console.log("running on port ", process.env.PORT || 8080);
+app.listen(process.env.port || 8080, () => {
+  console.log("running on port ", process.env.port || 8080);
 });
 // console.log(__dirname);
 // app.use("/", express.static(__dirname + "/public"));
