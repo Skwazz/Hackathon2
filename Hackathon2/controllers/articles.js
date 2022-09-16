@@ -3,7 +3,7 @@ const { getAllArticles, getArticle, searchArticles, newArticle, updateArticle, d
 const _getAllArticles = (req, res) => {
   getAllArticles()
     .then((data) => {
-      res.json();
+      res.json(data);
     })
     .catch((e) => {
       console.log(e);
