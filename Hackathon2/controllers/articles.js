@@ -72,6 +72,18 @@ const _deleteArticle = (req, res) => {
     });
 };
 
+const renderHome = (req, res) => {
+  res.render("pages/index", {
+    title: "Home",
+  });
+};
+
+const renderArticlesPage = (req, res) => {
+  res.render("pages/articles", {
+    title: "Articles",
+  });
+};
+
 module.exports = {
   _getAllArticles,
   _getArticle,
@@ -79,4 +91,6 @@ module.exports = {
   _newArticle,
   _updateArticle,
   _deleteArticle,
+  renderHome,
+  renderArticlesPage,
 };
