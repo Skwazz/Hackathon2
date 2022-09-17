@@ -4,6 +4,9 @@
 //     login();
 //   }
 // }
+
+// const { all } = require("../routes/articles");
+
 // login();
 const form = document.getElementById("form");
 function submitPost(event) {
@@ -19,16 +22,19 @@ function submitPost(event) {
     body: JSON.stringify({
       title: title,
       body: body,
-      date: date,
+      date_data: date,
     }),
   });
   form.reset();
 }
 async function allArticles() {
-  const articles = await fetch("/articles");
-  const jsoned = await JSON.parse(articles);
+  const articles = await fetch("/getarticles");
+  const jsoned = await articles.json()
   return jsoned;
 }
 allArticles().then((res) => {
-  console.log(res);
-});
+return res;
+}).then((res)=>{
+  
+})
+
