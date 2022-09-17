@@ -14,6 +14,6 @@ app.set("view engine", "ejs");
 app.listen(process.env.port || 8080, () => {
   console.log("running on port ", process.env.port || 8080);
 });
-app.use(express.static(__dirname + "/script"));
+app.use(express.static(__dirname + "/public"));
  // console.log(__dirname);
 // app.use("/", express.static(__dirname + "/public"));

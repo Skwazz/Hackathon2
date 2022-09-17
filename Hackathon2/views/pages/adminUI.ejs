@@ -15,8 +15,15 @@
         <form id="form" onsubmit="submitPost(event)">
           <input type="text" name="title" id="title" placeholder="title" />
           <label for="postBody">post body</label>
+          <select name="category" id="category">
+            <option value="html">Html</option> 
+            <option value="javascript">Javascript</option> 
+            <option value="CSS">CSS</option> 
+            <option value="react">React</option> 
+            <option value="nodejs">Nodejs</option> 
+          </select>
           <textarea name="postBody" id="postBody" rows="15" cols="60"></textarea>
-          <button id="button">CLICK ME PLEASE</button>
+          <button id="button" onclick="window.location.reload()">CLICK ME PLEASE</button><span><button id="edit" class="hidden">Edit</button></span>
         </form>
       </div>
       <div id="posts"></div>
