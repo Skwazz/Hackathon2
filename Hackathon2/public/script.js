@@ -24,3 +24,11 @@ function submitPost(event) {
   });
   form.reset();
 }
+async function allArticles() {
+  const articles = await fetch("/articles");
+  const jsoned = await JSON.parse(articles);
+  return jsoned;
+}
+allArticles().then((res) => {
+  console.log(res);
+});
