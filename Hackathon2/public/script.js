@@ -5,8 +5,6 @@
 //   }
 // }
 
-// const { all } = require("../routes/articles");
-
 // login();
 
 const posts = document.getElementById("posts");
@@ -128,7 +126,8 @@ function getPost(id) {
   const button = document.getElementById("button");
   edit.setAttribute("class", "show");
   button.setAttribute("class", "hidden");
-  form.setAttribute("onsubmit", "updatePost(event)");
+  // form.setAttribute("onsubmit", "updatePost(event)");
+  form.removeAttribute("onsubmit");
   form.setAttribute("method", "PUT");
   form.addEventListener("submit", function (event) {
     updatePost(event, id);

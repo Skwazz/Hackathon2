@@ -1,14 +1,3 @@
-// function login() {
-//   let password = prompt("Please enter password");
-//   if (password !== "password") {
-//     login();
-//   }
-// }
-
-// const { all } = require("../routes/articles");
-
-// login();
-
 async function allArticles() {
   const articles = await fetch("/getarticles");
   const jsoned = await articles.json();
