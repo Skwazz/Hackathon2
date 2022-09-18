@@ -50,6 +50,7 @@ allArticles()
 
 function renderPosts(arr) {
   arr.forEach((post) => {
+    
     const postDiv = document.createElement("div");
     postDiv.classList.add("newPost")
     const title = document.createElement("h1");
@@ -113,6 +114,8 @@ function updatePost(event, id) {
   form.reset();
 }
 
+
+
 function getPost(id) {
   getArticle(id).then((res) => {
     document.getElementById("title").value = res[0].title;
@@ -122,5 +125,9 @@ function getPost(id) {
   const button = document.getElementById("button");
   edit.setAttribute("class", "show");
   button.setAttribute("class", "hidden");
-  form.setAttribute("onsubmit", `updatePost(${id})`);
-}
+  form.setAttribute("method", 'PUT');
+  form.addEventListener("submit", function(event){
+    updatePost(event, id);
+    window.location.reload();
+  }
+)}
