@@ -26,6 +26,7 @@ function renderPosts(arr) {
   arr.forEach((post) => {
     const posts = document.getElementById("posts");
     const postDiv = document.createElement("div");
+    postDiv.classList.add("newPost")
     const title = document.createElement("h1");
     const body = document.createElement("p");
     const date = document.createElement("p");
