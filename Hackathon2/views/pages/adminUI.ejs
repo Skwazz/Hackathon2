@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blog Editor</title>
+    <%- include('../partials/head') %> <%- include('../partials/articles') %>
+    <link rel="stylesheet" href="/adminUI.css" />
+  </head>
+  <body>
+    <%- include('../partials/header') %>
+    <div id="root">
+      <div id="container">
+        <form id="form" onsubmit="submitPost(event)">
+          <input type="text" name="title" id="title" placeholder="Title..." />
+          <select name="category" id="category">
+            <option value="html">Html</option>
+            <option value="javascript">Javascript</option>
+            <option value="CSS">CSS</option>
+            <option value="react">React</option>
+            <option value="nodejs">Nodejs</option>
+          </select>
+          <textarea name="postBody" id="postBody" rows="17" cols="65" placeholder="Start writing!"></textarea>
+          <button id="button">Create New Post</button><span><button id="edit" class="hidden">Edit</button></span>
+        </form>
+      </div>
+      <div id="posts"></div>
+    </div>
+
+    <%- include('../partials/footer') %>
+    <script src="/script.js"></script>
+  </body>
+</html>

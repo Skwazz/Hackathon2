@@ -1,0 +1,104 @@
+<style>
+  .articlesLink {
+    font-size: 3rem;
+    text-decoration: none;
+    color: white;
+    font-family: "Roboto Condensed", sans-serif;
+  }
+
+  #welcomeText {
+    font-size: 3rem;
+    color: white;
+    font-family: "Roboto Condensed", sans-serif;
+  }
+
+  #landingContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #welcome {
+    height: 30vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: welcomeFadeIn 2s;
+  }
+
+  #enter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    animation: enterFadeIn 3s;
+  }
+
+  .articlesLink:hover {
+    animation: grow 6s;
+  }
+
+  #welcomeArticles {
+    min-height: 300px;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  .landingPosts {
+    overflow: hidden;
+    /* white-space: nowrap; */
+    margin: 10px;
+    width: 250px;
+    max-height: 300px;
+    text-align: center;
+    animation: postsFadeIn 6s;
+    box-shadow: 0px 0px 13px 3px rgba(0, 0, 0, 0.58);
+  }
+
+  @keyframes postsFadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes welcomeFadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes enterFadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes grow {
+    0% {
+      font-size: 3rem;
+    }
+    100% {
+      font-size: 4rem;
+    }
+  }
+
+  .landingTitle {
+    color: white;
+  }
+
+  .landingBody {
+    color: white;
+    opacity: 80%;
+  }
+</style>
