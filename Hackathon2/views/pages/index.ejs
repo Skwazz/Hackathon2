@@ -5,11 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Markdown Blog</title>
-    <%- include('../partials/head') %>
+    <%- include('../partials/head') %> <%- include('../partials/homepage-style') %>
   </head>
   <body>
-    <%- include('../partials/header') %>
-    <h1>HOME PAGE</h1>
+    <div id="landingContainer">
+      <div id="welcome">
+        <h1 id="welcomeText">Coding Today & Growing Each Day</h1>
+      </div>
+      <div id="welcomeArticles"></div>
+      <div id="enter">
+        <a href="/articles" class="articlesLink">Enter A World Of Lorem</a>
+      </div>
+    </div>
     <%- include('../partials/footer') %>
+    <script src="/indexArticles.js"></script>
   </body>
 </html>

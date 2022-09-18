@@ -84,6 +84,12 @@ const renderArticlesPage = (req, res) => {
   });
 };
 
+const renderAdminUI = (req, res) => {
+  res.render("pages/adminUI", {
+    title: "Admin UI",
+  });
+};
+
 module.exports = {
   _getAllArticles,
   _getArticle,
@@ -93,4 +99,5 @@ module.exports = {
   _deleteArticle,
   renderHome,
   renderArticlesPage,
+  renderAdminUI,
 };
