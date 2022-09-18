@@ -29,7 +29,7 @@ function submitPost(event) {
         title: title,
         body: body,
         category: category,
-        date_data: date,
+        date: date,
       }),
     });
     form.reset();
@@ -66,7 +66,7 @@ function renderPosts(arr) {
     update.setAttribute("onclick", `getPost(${id})`);
     title.textContent = post.title;
     body.textContent = post.body;
-    date.textContent = post.date_data.slice(0, 10);
+    date.textContent = post.date.slice(0, 10);
     category.textContent = post.category;
     deleted.textContent = "x";
     update.textContent = "edit";
@@ -111,7 +111,7 @@ function updatePost(event, id) {
       title: title,
       body: body,
       category: category,
-      date_data: date,
+      date: date,
     }),
   });
   form.reset();

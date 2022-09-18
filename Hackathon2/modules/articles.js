@@ -1,15 +1,15 @@
 const db = require("../connections/db.js");
 
 const getAllArticles = () => {
-  return db("articles").select("id", "title", "date_data", "body", "category").orderBy("title");
+  return db("articles").select("id", "title", "date", "body", "category").orderBy("title");
 };
 
 const getArticle = (article_id) => {
-  return db("articles").select("id", "title", "date_data", "body", "category").where({ id: article_id });
+  return db("articles").select("id", "title", "date", "body", "category").where({ id: article_id });
 };
 
 const searchArticles = (article_title) => {
-  return db("articles").select("id", "title", "date_data", "body", "category").whereILike("title", `${article_title}%`);
+  return db("articles").select("id", "title", "date", "body", "category").whereILike("title", `${article_title}%`);
 };
 
 const newArticle = (new_article) => {
