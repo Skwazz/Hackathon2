@@ -9,7 +9,6 @@
 
 // login();
 
-
 async function allArticles() {
   const articles = await fetch("/getarticles");
   const jsoned = await articles.json();
@@ -25,6 +24,7 @@ allArticles()
 
 function renderPosts(arr) {
   arr.forEach((post) => {
+    const posts = document.getElementById("posts");
     const postDiv = document.createElement("div");
     const title = document.createElement("h1");
     const body = document.createElement("p");
