@@ -19,19 +19,24 @@ function submitPost(event) {
   const body = document.getElementById("postBody").value;
   const category = document.getElementById("category").value;
   const date = new Date();
-  fetch("/articles", {
-    method: "POST",
-    headers: {
-      "content-type": "application/json",
-    },
-    body: JSON.stringify({
-      title: title,
-      body: body,
-      category: category,
-      date_data: date,
-    }),
-  });
-  form.reset();
+  if (title == "" || body == "") {
+    alert("please fill in all the fields");
+  } else {
+    fetch("/articles", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        title: title,
+        body: body,
+        category: category,
+        date_data: date,
+      }),
+    });
+    form.reset();
+    window.location.reload();
+  }
 }
 
 async function allArticles() {
@@ -50,9 +55,8 @@ allArticles()
 
 function renderPosts(arr) {
   arr.forEach((post) => {
-    
     const postDiv = document.createElement("div");
-    postDiv.classList.add("newPost")
+    postDiv.classList.add("newPost");
     const title = document.createElement("h1");
     const body = document.createElement("p");
     const date = document.createElement("p");
@@ -64,7 +68,7 @@ function renderPosts(arr) {
     update.setAttribute("onclick", `getPost(${id})`);
     title.textContent = post.title;
     body.textContent = post.body;
-    date.textContent = post.date_data;
+    date.textContent = post.date_data.slice(0, 10);
     category.textContent = post.category;
     deleted.textContent = "x";
     update.textContent = "edit";
@@ -99,6 +103,7 @@ function updatePost(event, id) {
   const body = document.getElementById("postBody").value;
   const category = document.getElementById("category").value;
   const date = new Date();
+
   fetch(`/${id}`, {
     method: "PUT",
     headers: {
@@ -114,8 +119,6 @@ function updatePost(event, id) {
   form.reset();
 }
 
-
-
 function getPost(id) {
   getArticle(id).then((res) => {
     document.getElementById("title").value = res[0].title;
@@ -125,9 +128,9 @@ function getPost(id) {
   const button = document.getElementById("button");
   edit.setAttribute("class", "show");
   button.setAttribute("class", "hidden");
-  form.setAttribute("method", 'PUT');
-  form.addEventListener("submit", function(event){
+  form.setAttribute("method", "PUT");
+  form.addEventListener("submit", function (event) {
     updatePost(event, id);
     window.location.reload();
-  }
-)}
+  });
+}

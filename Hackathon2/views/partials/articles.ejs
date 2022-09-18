@@ -1,16 +1,51 @@
 <style>
-    #posts{
-    color:aliceblue;
+  #posts {
+    color: aliceblue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    border: none;
+    width: 100vw;
+  }
+  .newPost {
+    border: 3px white solid;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    background-color: rgb(11, 67, 116);
+    font-family: "Roboto Condensed", sans-serif;
     display: flex;
     flex-direction: column;
+    max-width: 500px;
+    max-height: 300px;
+    min-width: 500px;
+    min-height: 300px;
+    overflow: auto;
+    position: relative;
+  }
+  .category {
+    position: absolute;
+    right: 0;
+  }
+
+  #container {
+    margin-top: 20px;
+  }
+
+  #form {
+    border: 1px solid white;
+    background-color: white;
+    position: relative;
+  }
+
+  #root {
+    display: flex;
+    justify-content: center;
     align-items: center;
-    border:none;
-    }
-    .newPost{
-        border:3px white solid;
-        border-radius: 10px;
-        margin-bottom: 10px;
-        background-color: rgb(11, 67, 116);
-        font-family: "Roboto Condensed", sans-serif;
-    }
+  }
+
+  #category {
+    position: absolute;
+    right: 0;
+  }
 </style>
