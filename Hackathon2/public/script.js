@@ -128,9 +128,11 @@ function getPost(id) {
   const button = document.getElementById("button");
   edit.setAttribute("class", "show");
   button.setAttribute("class", "hidden");
+  form.setAttribute("onsubmit", "updatePost(event)");
   form.setAttribute("method", "PUT");
   form.addEventListener("submit", function (event) {
     updatePost(event, id);
     window.location.reload();
   });
+  console.log("get");
 }
