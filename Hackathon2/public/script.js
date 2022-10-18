@@ -102,7 +102,10 @@ function updatePost(event, id) {
     const category = document.getElementById('category').value;
     const date = new Date();
 
-    // TODO: Double check intent behind this
+    // This will still work, but it's better to not have unresolved promises lying around.
+    // Like, what if this fetch request throws some sort of error? You'd probably want the user
+    // to realize when something hasn't worked, so best to add a catch and some loader(s) when
+    // the request is being processed, etc.
     fetch(`/${id}`, {
         method: 'PUT',
         headers: {
